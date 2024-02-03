@@ -5,7 +5,7 @@
 }
 
 html, body {
-    cursor: none;
+    cursor: url("../img/wot_arrow.png"), auto;
     overflow: hidden;
     margin: 0;
     background-color: black;

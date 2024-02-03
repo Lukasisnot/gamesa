@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&family=VT323&display=swap');
+*{
+    font-family: 'Kanit', sans-serif;
+}
+
+body {
+    cursor: url("../img/wot_arrow.png"), auto;
+    overflow: hidden;
+    margin: 0;
+    display: flex;
+    background-color: #9B9FB5;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+}
+#startButton {
+    position: absolute;
+    width: 150px;
+    height: 80px;
+    background-color: #9B9FB5;
+    color: white;
+    text-decoration: none;
+    border: 2px solid black;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: url("../img/wot_link.png"), auto;
+    font-size: x-large;
+}
+#startButton:hover {
+    color: #502E2A;
+}
+#canvas{
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
+}

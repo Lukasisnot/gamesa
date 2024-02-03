@@ -1,0 +1,2 @@
+obrazky se nenactou na poprve ale az po F5
+

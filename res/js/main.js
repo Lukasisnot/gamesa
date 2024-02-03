@@ -1,9 +1,12 @@
-import { Background } from "./ui/background.js";
+import { Background } from "/res/js/background.js";
+import { Tank } from "/res/js/vehicles/tank.js";
+
 
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
 const background = new Background();
+const tank = new Tank();
 
 const keys = {};
 
@@ -33,16 +36,12 @@ const gameLoop = (now) => {
     window.requestAnimationFrame(gameLoop);
 };
 
-window.onload = async () => {
-    window.requestAnimationFrame(gameLoop);
-};
-
 const resizeCanvas = () => {
-    canvas.width = 1280;
-    canvas.height = 720;
+    canvas.width = 1920;
+    canvas.height = 1080;
 };
 
-const clearCanvas = () => {
+const clearCanvas =  () => {
     background.draw(ctx);
 };
 
@@ -51,10 +50,14 @@ const update = () => {
 };
 
 const render = () => {
-
+    tank.draw(ctx);
 };
 
 const calcDeltaTime = (now) => {
     deltaTime = now - lastTick;
     lastTick = now;
+};
+
+window.onload = () => {
+    window.requestAnimationFrame(gameLoop);
 };
