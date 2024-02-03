@@ -1,0 +1,18 @@
+tank gamesa
+
+
+topdown hra - koukas ze shora
+pozadi - doly
+
+
+
+jsem tank - prase 
+
+otacis a hybes se mysi
+strilim po tancich urbitim tlacitkem, musi byt tank spravne otoceny(strili pouze z dela)
+
+jezdi na me v rovne care tanky a strili (strela leti pomalu)
+
+muzu ramovat tanky ale ubere mi to hp
+
+maybe - uprostred kamen - matika aby se 
