@@ -1,12 +1,12 @@
 import { Background } from "/res/js/background.js";
 import { Tank } from "/res/js/vehicles/tank.js";
-
+import { Vector2 } from "/res/js/math.js";
 
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
 const background = new Background();
-const tank = new Tank();
+const tank = new Tank("/res/img/JpzE100.png");
 
 const keys = {};
 
@@ -46,7 +46,8 @@ const clearCanvas =  () => {
 };
 
 const update = () => {
-    
+    tank.moveTo()
+    tank.update(deltaTime);
 };
 
 const render = () => {

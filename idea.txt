@@ -15,8 +15,10 @@ strilim po tancich urbitim tlacitkem, musi byt tank spravne otoceny(strili pouze
 
 jezdi na me v rovne care tanky a strili (strela leti pomalu)
 
-muzu ramovat tanky ale ubere mi to hp
+bar s upgrady, hp a hp regen (jako we wotku)
+
+maybe - muzu ramovat tanky ale ubere mi to hp
 
 maybe - upgrady na dmg a hp regen, enemy vylepsenni
 
-maybe - uprostred kamen - matika aby se 
+maybe - uprostred kamen - matika aby se zastavili
