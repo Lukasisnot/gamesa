@@ -7,23 +7,23 @@ export class Vector2 {
 vektor - smer a velikost
 scalar - jakykoliv cislo
 */
-    static add(a, b) {
+    static add(a = new Vector2(0, 0), b = new Vector2(0, 0)) {
         return new Vector2(a.x + b.x, a.y + b.y);
     }
 
-    static sub(a, b) {
+    static sub(a = new Vector2(0, 0), b = new Vector2(0, 0)) {
         return new Vector2(a.x - b.x, a.y - b.y);
     }
 
-    static scale(vector, scalar) {
+    static scale(vector = new Vector2(0, 0), scalar) {
         return new Vector2(vector.x * scalar, vector.y * scalar);
     }
 
-    static divide(vector, scalar) {
+    static divide(vector = new Vector2(0, 0), scalar) {
         return new Vector2(vector.x / scalar, vector.y / scalar);
     }
 
-    static dot(a, b) {
+    static dot(a = new Vector2(0, 0), b = new Vector2(0, 0)) {
         return a.x * b.x + a.y * b.y;
     }
 

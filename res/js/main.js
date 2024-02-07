@@ -9,9 +9,15 @@ const background = new Background();
 const tank = new Tank("/res/img/JpzE100.png");
 
 const keys = {};
+const mousePos = new Vector2(0, 0);
 
 let lastTick = performance.now();
 let deltaTime;
+
+document.addEventListener("mousemove", (event) => {
+    mousePos.x = event.clientX;
+    mousePos.y = event.clientY;
+});
 
 document.addEventListener("keydown", (e) => {
   keys[e.code] = true;
@@ -22,7 +28,6 @@ document.addEventListener("keyup", (e) => {
 });
 
 const gameLoop = (now) => {
-
     resizeCanvas();
 
     clearCanvas();
@@ -46,7 +51,7 @@ const clearCanvas =  () => {
 };
 
 const update = () => {
-    tank.moveTo()
+    tank.moveTo(mousePos);
     tank.update(deltaTime);
 };
 
