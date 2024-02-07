@@ -2,6 +2,9 @@ import { Background } from "/res/js/background.js";
 import { Tank } from "/res/js/vehicles/tank.js";
 import { Vector2 } from "/res/js/math.js";
 
+const startButton = document.getElementById("startButton");
+const content = document.getElementById("content");
+
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
@@ -13,6 +16,20 @@ const mousePos = new Vector2(0, 0);
 
 let lastTick = performance.now();
 let deltaTime;
+
+window.onload = () => {
+    canvas.style.display = "none";
+}
+
+background.img.onload = () => {
+    console.log("img loaded");
+}
+
+startButton.onclick = () => {
+    content.style.display = "none";
+    canvas.style.display = "block";
+    window.requestAnimationFrame(gameLoop);
+};
 
 document.addEventListener("mousemove", (event) => {
     mousePos.x = event.clientX;
@@ -62,8 +79,4 @@ const render = () => {
 const calcDeltaTime = (now) => {
     deltaTime = now - lastTick;
     lastTick = now;
-};
-
-window.onload = () => {
-    window.requestAnimationFrame(gameLoop);
 };

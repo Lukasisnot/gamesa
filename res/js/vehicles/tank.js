@@ -10,9 +10,8 @@ export class Tank extends Entity {
     }
     
     update(deltaTime) {
-        let lerpPos = Vector2.lerp(this.pos, this.moveToPos, deltaTime);
-        this.position = lerpPos;
-        console.log(this.position);
+        this.position = Vector2.lerp(this.position, this.moveToPos, deltaTime * .01);
+        // console.log(this.position);
     }
 
     moveTo(pos = new Vector2(0, 0)) {
