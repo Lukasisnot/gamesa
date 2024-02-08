@@ -1,4 +1,4 @@
-import { Entity } from "./res/js/entity.js";
+import { Entity } from "./entity.js";
 
 export class Background extends Entity{
     constructor() {
