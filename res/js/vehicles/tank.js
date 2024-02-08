@@ -2,15 +2,14 @@ import { Entity } from "../entity.js";
 import { Vector2 } from "../math.js";
 
 export class Tank extends Entity {
-    constructor(path, speed, hp, dmg) {
-        super(path);
+    constructor(speed, hp, dmg) {
+        super("./res/img/JpzE100.png");
         this.speed = speed;
         this.maxHP = hp;
         this.dmg = dmg;
     }
     
     update(deltaTime) {
-        this.position = Vector2.lerp(this.position, this.moveToPos, deltaTime * .01);
         // console.log(this.position);
     }
 

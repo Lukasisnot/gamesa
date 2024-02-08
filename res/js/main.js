@@ -10,7 +10,7 @@ const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
 const background = new Background();
-const tank = new Tank("/res/img/JpzE100.png");
+const tank = new Tank();
 
 const keys = {};
 const mousePos = new Vector2(0, 0);
