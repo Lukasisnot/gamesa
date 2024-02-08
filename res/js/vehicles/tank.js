@@ -1,4 +1,4 @@
-import { Entity } from "/res/js/entity.js";
+import { Entity } from "./res/js/entity.js";
 import { Vector2 } from "../math.js";
 
 export class Tank extends Entity {

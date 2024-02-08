@@ -38,20 +38,20 @@ normalizovany vekror -  stejny smer, delka 1
     }
 }
 
-export class Math {
-    static sqrt(x) {
-        let xStr = x.toString();
+// export class Math {
+//     static sqrt(x) {
+//         let xStr = x.toString();
 
-        let dotPos = -1;
-        for (let i = 0; i < xStr.length; i++) {
-            if (xStr[i] == ".") {
-                dotPos = i;
-            }
-        }
+//         let dotPos = -1;
+//         for (let i = 0; i < xStr.length; i++) {
+//             if (xStr[i] == ".") {
+//                 dotPos = i;
+//             }
+//         }
 
-        let afterDeciPairs = [];
-        for (let i = dotPos + 1; i < xStr.length; i++) {
+//         let afterDeciPairs = [];
+//         for (let i = dotPos + 1; i < xStr.length; i++) {
             
-        }
-    }
-}
+//         }
+//     }
+// }

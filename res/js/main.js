@@ -1,7 +1,7 @@
 import { Background } from "./res/js/background.js";
 import { Tank } from "./res/js/vehicles/tank.js";
 import { Vector2 } from "./res/js/math.js";
-import { Math } from "./res/js/math.js";
+// import { Math } from "./res/js/math.js";
 
 const startButton = document.getElementById("startButton");
 const content = document.getElementById("content");
