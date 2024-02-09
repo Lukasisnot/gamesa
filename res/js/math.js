@@ -6,7 +6,7 @@ export class Vector2 {
 /*
 vektor - smer a velikost
 scalar - jakykoliv cislo
-normalizovany vekror -  stejny smer, delka 1
+
 */
     static add(a = new Vector2(0, 0), b = new Vector2(0, 0)) {
         return new Vector2(a.x + b.x, a.y + b.y);
@@ -28,30 +28,15 @@ normalizovany vekror -  stejny smer, delka 1
         return a.x * b.x + a.y * b.y;
     }
 
-    // linear interpolation - t - vektor presne mezi "a" a "b"
+    // linear interpolation - t urcuje vektor mezi "a" a "b"
     static lerp(a, b, t) {
         return this.add(this.scale(a, t), this.scale(b, (1 - t)));
     }
-
+    
+    //normalizovany vektor -  stejny smer, delka 1
     static normalize(vector = new Vector2(0, 0)) {
-        return this.divide(vector, vector.x * vector.x + vector.y * vector.y);
+        let x = vector.x / Math.sqrt(vector.x * vector.x + vector.y * vector.y);
+        let y = vector.y / Math.sqrt(vector.x * vector.x + vector.y * vector.y);
+        return new Vector2(x, y);
     }
 }
-
-// export class Math {
-//     static sqrt(x) {
-//         let xStr = x.toString();
-
-//         let dotPos = -1;
-//         for (let i = 0; i < xStr.length; i++) {
-//             if (xStr[i] == ".") {
-//                 dotPos = i;
-//             }
-//         }
-
-//         let afterDeciPairs = [];
-//         for (let i = dotPos + 1; i < xStr.length; i++) {
-            
-//         }
-//     }
-// }

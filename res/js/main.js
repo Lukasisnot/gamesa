@@ -10,7 +10,7 @@ const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
 const background = new Background();
-const tank = new Tank();
+const tank = new Tank(2);
 
 const keys = {};
 const mousePos = new Vector2(0, 0);
@@ -20,11 +20,6 @@ let deltaTime;
 
 window.onload = () => {
     canvas.style.display = "none";
-}
-
-background.img.onload = () => {
-    let w = new Vector2(32, 27);
-    console.log(Vector2.normalize(w));
 }
 
 startButton.onclick = () => {
