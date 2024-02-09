@@ -7,6 +7,7 @@ export class Vector2 {
 vektor - smer a velikost
 scalar - jakykoliv cislo
 
+
 */
     static add(a = new Vector2(0, 0), b = new Vector2(0, 0)) {
         return new Vector2(a.x + b.x, a.y + b.y);
