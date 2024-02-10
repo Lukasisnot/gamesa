@@ -1,2 +1,3 @@
 # Tank gamesa
+ahhhhhhhh... do ceho sme se to zase pustili...
 [View](https://lukasisnot.github.io/gamesa/)
