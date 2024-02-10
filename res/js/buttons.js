@@ -1,12 +1,12 @@
 import { Entity } from "./entity.js";
 
-class Btn extends Entity {
-    constructor(path) {
-        super(path)
-    }
-}
+// class Btn extends Entity {
+//     constructor(path) {
+//         super(path)
+//     }
+// }
 
-export class DmgBtn extends Btn
+export class DmgBtn extends Entity
 {
     constructor() {
        super("./res/img/dmgUpgrade.PNG"); 
@@ -15,7 +15,7 @@ export class DmgBtn extends Btn
     }
    
 }
-export class HealBtn extends Btn
+export class HealBtn extends Entity
 {
     constructor() {
         super("./res/img/Heal.PNG");
