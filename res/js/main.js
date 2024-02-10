@@ -13,7 +13,7 @@ const ctx = canvas.getContext("2d");
 
 //obrazky
 const background = new Background();
-const tank = new Tank(2);
+const tank = new Tank(50);
 
 const keys = {};
 const mousePos = new Vector2(0, 0);
@@ -76,7 +76,7 @@ const update = () => {
     const canvasBound = canvas.getBoundingClientRect();
     const ratio = new Vector2(canvas.width / canvasBound.width, canvas.height / canvasBound.height);
     const moveTo = new Vector2((mousePos.x - canvasBound.x) * ratio.x, (mousePos.y - canvasBound.y) * ratio.y);
-    tank.moveTo(new Vector2(clamp(moveTo.x, canvas.width - tank.img.width), clamp(moveTo.y, canvas.height - tank.img.height)));
+    tank.moveTo(new Vector2(clamp(moveTo.x, canvas.width - tank.img.width / 2, tank.img.width / 2), clamp(moveTo.y, canvas.height - tank.img.height / 2, tank.img.height / 2)));
     tank.update(deltaTime);
 };
 

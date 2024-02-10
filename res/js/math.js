@@ -29,6 +29,10 @@ scalar - jakykoliv cislo
         return a.x * b.x + a.y * b.y;
     }
 
+    static length(a = new Vector2(1, 1)) {
+        return Math.sqrt(a.x * a.x + a.y * a.y);
+    }
+
     // linear interpolation - t urcuje vektor mezi "a" a "b"
     static lerp(a, b, t) {
         return this.add(this.scale(a, t), this.scale(b, (1 - t)));
