@@ -1,23 +1,32 @@
 import { Background } from "./background.js";
 import { Tank } from "./vehicles/tank.js";
 import { Vector2 } from "./math.js";
+import { DmgBtn} from "./buttons.js";
+import { HealBtn} from "./buttons.js";
 // import { Math } from "./res/js/math.js";
+
 
 const startButton = document.getElementById("startButton");
 const content = document.getElementById("content");
 
+//canvas
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
+//obrazky
 const background = new Background();
 const tank = new Tank(2);
 
 const keys = {};
 const mousePos = new Vector2(0, 0);
 
+//delta time
 let lastTick = performance.now();
 let deltaTime;
 
+//buttony
+const dmgButton = new DmgBtn();
+const healButton = new HealBtn();
 window.onload = () => {
     canvas.style.display = "none";
 }
@@ -65,12 +74,17 @@ const clearCanvas =  () => {
 };
 
 const update = () => {
+    let canvasBound = canvas.getBoundingClientRect();
+    let bodyBound = document.body.getBoundingClientRect();
+    console.log(mousePos.y - canvasBound.y);
     tank.moveTo(mousePos);
     tank.update(deltaTime);
 };
 
 const render = () => {
     tank.draw(ctx);
+    dmgButton.draw(ctx);
+    healButton.draw(ctx);
 };
 
 const calcDeltaTime = (now) => {
