@@ -9,7 +9,7 @@ class Btn extends Entity {
 export class DmgBtn extends Btn
 {
     constructor() {
-       super("./res/img/dmgUpgrade.png"); 
+       super("./res/img/dmgUpgrade.PNG"); 
        this.position.x = 800;
        this.position.y = 950;
     }
@@ -18,7 +18,7 @@ export class DmgBtn extends Btn
 export class HealBtn extends Btn
 {
     constructor() {
-        super("./res/img/Heal.png");
+        super("./res/img/Heal.PNG");
         this.position.x = 950;
         this.position.y = 950;
     }
