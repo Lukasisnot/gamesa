@@ -16,7 +16,7 @@ export class Tank extends Entity {
         let velocity = Vector2.scale(moveDir, this.speed * deltaTime);
         let move = Vector2.add(this.position, velocity);
         // console.log(this.moveToPos);
-        this.position = new Vector2(500, 500);
+        this.position = this.moveToPos;
     }
 
     moveTo(pos = new Vector2(0, 0)) {

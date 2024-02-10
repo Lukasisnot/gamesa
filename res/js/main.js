@@ -74,10 +74,9 @@ const clearCanvas =  () => {
 };
 
 const update = () => {
-    let canvasBound = canvas.getBoundingClientRect();
-    let bodyBound = document.body.getBoundingClientRect();
-    console.log(mousePos.y - canvasBound.y);
-    tank.moveTo(mousePos);
+    const canvasBound = canvas.getBoundingClientRect();
+    const ratio = new Vector2(canvas.width / canvasBound.width, canvas.height / canvasBound.height);
+    tank.moveTo(new Vector2((mousePos.x - canvasBound.x) * ratio.x, (mousePos.y - canvasBound.y) * ratio.y));
     tank.update(deltaTime);
 };
 
