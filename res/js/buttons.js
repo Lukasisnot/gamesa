@@ -18,7 +18,7 @@ export class DmgBtn extends Btn
 export class HealBtn extends Btn
 {
     constructor() {
-        super("./res/img/Heal.png"); 
+        super("./res/img/Heal.png");
         this.position.x = 950;
         this.position.y = 950;
     }

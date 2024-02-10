@@ -1,10 +1,8 @@
 import { Background } from "./background.js";
 import { Tank } from "./vehicles/tank.js";
 import { Vector2 } from "./math.js";
-import { DmgBtn} from "./buttons.js";
-import { HealBtn} from "./buttons.js";
-// import { Math } from "./res/js/math.js";
-
+import { DmgBtn } from "./buttons.js";
+import { HealBtn } from "./buttons.js";
 
 const startButton = document.getElementById("startButton");
 const content = document.getElementById("content");
@@ -27,6 +25,7 @@ let deltaTime;
 //buttony
 const dmgButton = new DmgBtn();
 const healButton = new HealBtn();
+
 window.onload = () => {
     canvas.style.display = "none";
 }
