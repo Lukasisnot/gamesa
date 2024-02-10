@@ -76,7 +76,8 @@ const clearCanvas =  () => {
 const update = () => {
     const canvasBound = canvas.getBoundingClientRect();
     const ratio = new Vector2(canvas.width / canvasBound.width, canvas.height / canvasBound.height);
-    tank.moveTo(new Vector2((mousePos.x - canvasBound.x) * ratio.x, (mousePos.y - canvasBound.y) * ratio.y));
+    const moveTo = new Vector2((mousePos.x - canvasBound.x) * ratio.x, (mousePos.y - canvasBound.y) * ratio.y);
+    tank.moveTo(new Vector2(clamp(moveTo.x, canvas.width - tank.img.width), clamp(moveTo.y, canvas.height - tank.img.height)));
     tank.update(deltaTime);
 };
 
@@ -89,4 +90,10 @@ const render = () => {
 const calcDeltaTime = (now) => {
     deltaTime = now - lastTick;
     lastTick = now;
+};
+
+const clamp = (value, max, min = 0) => {
+    if (value < min) return min;
+    if (value > max) return max;
+    return value;
 };
