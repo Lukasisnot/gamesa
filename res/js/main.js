@@ -13,7 +13,8 @@ const ctx = canvas.getContext("2d");
 
 //obrazky
 const background = new Background();
-const tank = new Tank(50);
+const tank = new Tank(40);
+tank.setSize(new Vector2(.75, .75));
 
 const keys = {};
 const mousePos = new Vector2(0, 0);
@@ -24,7 +25,11 @@ let deltaTime;
 
 //buttony
 const dmgButton = new DmgBtn();
+dmgButton.position = new Vector2(850, 950);
+dmgButton.setSize(new Vector2(.75, .75));
 const healButton = new HealBtn();
+healButton.position = new Vector2(950, 950);
+healButton.setSize(new Vector2(.75, .75));
 
 window.onload = () => {
     canvas.style.display = "none";
@@ -77,7 +82,7 @@ const update = () => {
     const canvasBound = canvas.getBoundingClientRect();
     const ratio = new Vector2(canvas.width / canvasBound.width, canvas.height / canvasBound.height);
     const moveTo = new Vector2((mousePos.x - canvasBound.x) * ratio.x, (mousePos.y - canvasBound.y) * ratio.y);
-    tank.moveTo(new Vector2(clamp(moveTo.x, canvas.width - tank.img.width / 2, tank.img.width / 2), clamp(moveTo.y, canvas.height - tank.img.width / 2, tank.img.width / 2)));
+    tank.moveTo(new Vector2(clamp(moveTo.x, canvas.width - tank.size.x / 2, tank.size.x / 2), clamp(moveTo.y, canvas.height - tank.size.x / 2, tank.size.x / 2)));
     tank.update(deltaTime);
 };
 

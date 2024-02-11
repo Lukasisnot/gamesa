@@ -12,7 +12,7 @@ export class Tank extends Entity {
     }
     
     update(deltaTime = 1) {
-        this.moveToPos = Vector2.add(this.moveToPos, new Vector2(this.img.width * -0.5, this.img.height * -0.5));
+        this.moveToPos = Vector2.add(this.moveToPos, new Vector2(this.size.x * -0.5, this.size.y * -0.5));
         let currentPos = new Vector2(this.position.x, this.position.y);
         let dir = Vector2.normalize(Vector2.sub(this.moveToPos, currentPos));
         let velocity = Vector2.scale(dir, this.speed * deltaTime / 100);
