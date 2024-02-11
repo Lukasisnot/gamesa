@@ -8,7 +8,16 @@ export class Tank extends Entity {
         this.maxHP = hp;
         this.dmg = dmg;
         this.moveToPos = new Vector2(0, 0);
-        this.offsetToleration = 3;
+        this.offsetToleration = 10;
+    }
+
+    draw(ctx) {
+        let ctxTranslation = new Vector2(this.position.x + this.img.width / 2, this.position.y + this.img.height / 2);
+        ctx.translate(ctxTranslation.x, ctxTranslation.y);
+        ctx.rotate(this.rotation);
+        ctx.drawImage(this.img, -this.img.width / 2, -this.img.height / 2, this.size.x, this.size.y);
+        ctx.rotate(-this.rotation);
+        ctx.translate(-ctxTranslation.x, -ctxTranslation.y);
     }
     
     update(deltaTime = 1) {
@@ -16,8 +25,10 @@ export class Tank extends Entity {
         let currentPos = new Vector2(this.position.x, this.position.y);
         let dir = Vector2.normalize(Vector2.sub(this.moveToPos, currentPos));
         let velocity = Vector2.scale(dir, this.speed * deltaTime / 100);
+        
+        this.rotation = Math.atan2(dir.y, dir.x) + Math.PI / 2;
 
-        let offset = Vector2.length(Vector2.sub(this.position, this.moveToPos));
+        let offset = Vector2.length(Vector2.sub(this.moveToPos, currentPos));
         if (offset > this.offsetToleration)
             this.position = new Vector2(this.position.x + velocity.x, this.position.y + velocity.y);
     }

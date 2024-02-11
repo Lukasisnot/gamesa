@@ -6,6 +6,7 @@ export class Entity {
         this.img.src = path;
         this.position = pos;
         this.size = new Vector2(this.img.width * size.x, this.img.height * size.y);
+        this.rotation = 0;
     }
 
     draw(ctx) {
