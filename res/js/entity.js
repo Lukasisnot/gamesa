@@ -10,6 +10,11 @@ export class Entity {
     }
 
     draw(ctx) {
-        ctx.drawImage(this.img, this.position.x, this.position.y, this.size.x, this.size.y);
+        let ctxTranslation = new Vector2(this.position.x + this.img.width / 2, this.position.y + this.img.height / 2);
+        ctx.translate(ctxTranslation.x, ctxTranslation.y);
+        ctx.rotate(this.rotation);
+        ctx.drawImage(this.img, -this.img.width / 2, -this.img.height / 2, this.size.x, this.size.y);
+        ctx.rotate(-this.rotation);
+        ctx.translate(-ctxTranslation.x, -ctxTranslation.y);    
     }
 }

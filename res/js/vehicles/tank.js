@@ -10,15 +10,6 @@ export class Tank extends Entity {
         this.moveToPos = new Vector2(0, 0);
         this.offsetToleration = 10;
     }
-
-    draw(ctx) {
-        let ctxTranslation = new Vector2(this.position.x + this.img.width / 2, this.position.y + this.img.height / 2);
-        ctx.translate(ctxTranslation.x, ctxTranslation.y);
-        ctx.rotate(this.rotation);
-        ctx.drawImage(this.img, -this.img.width / 2, -this.img.height / 2, this.size.x, this.size.y);
-        ctx.rotate(-this.rotation);
-        ctx.translate(-ctxTranslation.x, -ctxTranslation.y);
-    }
     
     update(deltaTime = 1) {
         this.moveToPos = Vector2.add(this.moveToPos, new Vector2(this.img.width * -0.5, this.img.height * -0.5));
